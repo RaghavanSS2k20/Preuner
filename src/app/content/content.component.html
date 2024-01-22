@@ -1,0 +1,38 @@
+<div class="content">
+    <div *ngIf="currentTab === 'home'">
+    <div class = "header">
+       <p> Good Evening </p>
+       <button (click)="handleUpload()"> Upload</button>
+    </div>
+    <div *ngIf="cards.length === 0; else hasCards" class="card-container">
+        <div class="empty">
+        <img src="../assets/pupatraunet.svg">
+        <p>Pupatranaut sniffs this as Null</p>
+        </div>
+    </div>
+    <ng-template #hasCards>
+        <div class="card-container">
+            <app-card *ngFor="let card of cards" [card]="card"></app-card>
+        </div>
+    </ng-template>
+</div>
+<div *ngIf="currentTab === 'dashboard'">
+    <div class="card-container">
+        <div class="empty">
+        <img src="../assets/pupatraunet.svg">
+        <p>Pupatranaut sniffs this as Dashboard</p>
+        </div>
+    </div>
+</div>
+<div *ngIf="currentTab === 'profile'">
+    <div class="card-container">
+        <div class="empty">
+        <img src="../assets/pupatraunet.svg">
+        <p>Pupatranaut sniffs this as Contact tab</p>
+        </div>
+    </div>
+</div>
+</div>
+<app-overlay  *ngIf="isOverlayVisible" (close)="closeOverlay()"  >
+        
+</app-overlay>

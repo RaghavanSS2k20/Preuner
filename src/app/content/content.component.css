@@ -1,0 +1,52 @@
+div.content {
+    margin-left: 200px;
+    padding: 2%;
+    height: 100vh;
+    color: black;
+    font-size: 100px;
+}
+.header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.header button {
+  border: 3px dashed #2A51E6;
+  padding: 1%; /* Adjust padding as a percentage for responsiveness */
+  background-color: transparent;
+  color: #2A51E6;
+  font-size: 15%; /* Use em for font size for better responsiveness */
+  cursor: pointer;
+  border-radius: 2%;
+  /* Add any additional styles as needed */
+
+  /* Optional: Add media queries for specific screen sizes */
+  @media screen and (max-width: 600px) {
+    font-size: 10%;
+  }
+}
+
+.header p{
+    font-weight: 900;
+    font-size: large;
+    margin: 2%;
+}
+.empty{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-weight: 700;
+    color: #1A3084;
+    
+}
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+    justify-content: space-around;
+  }
+  @media (max-width: 600px) {
+    .card-container {
+      grid-template-columns: 1fr;
+    }
+  }  

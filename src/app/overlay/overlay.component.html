@@ -1,0 +1,21 @@
+<div class="overlay-backdrop">
+<div class="overlay-container">
+  <!-- Your overlay content goes here -->
+<div class = "content">
+    <h2>Please Upload a Video</h2>
+    <div class="linkinputcontainer">
+    <input type="text" placeholder="Enter video link" [(ngModel)]="videoLink" class="video-input" />
+    <button class="uploadbutton" (click)="submitLink()" >Submit</button>
+    </div>
+
+    <p>OR</p>
+  <div class="button-container">
+    <label for="file-upload-button" class="file-upload-as-button">
+        <input id="file-upload-button" type="file" style="display:none;" />
+        <button class="uploadbutton" onclick="document.getElementById('file-upload-button').click()">Upload as a file</button>
+      </label>
+    <button (click)="closeOverlay()" class="closebutton"> close</button>
+  </div>
+</div>
+</div>
+</div>

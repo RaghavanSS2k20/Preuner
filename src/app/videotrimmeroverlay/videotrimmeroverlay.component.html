@@ -1,0 +1,10 @@
+<div class="overlay-backdrop">
+    <div class="overlay-container">
+        <app-videotrimmer source="../assets/v4.mp4"   (base64)="data($event)"></app-videotrimmer>
+<video controls *ngIf="trimmedVideoData">
+  <source [src]="createBlobUrl(trimmedVideoData)" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+    </div>
+    <button class="close-button" (click)="closeOverlay()">close</button>
+</div>

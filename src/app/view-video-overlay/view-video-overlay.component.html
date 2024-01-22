@@ -1,0 +1,13 @@
+<!-- view-video-overlay.component.html -->
+<div class="overlay-backdrop">
+    <div class="overlay-container">
+<div class="video-container">
+    <video width="100%" height="medium" controls>
+      <source [src]="card.videoUrl" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  
+    <button (click)="closeOverlay()" class="closebutton"> close</button>
+  </div>
+</div>
+</div>

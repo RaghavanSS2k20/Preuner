@@ -1,0 +1,30 @@
+<div class="sidebar">
+    <div class="container">
+
+        <div class="top-container">
+            <div class="user-info" (click)="navigateProfile()" >
+                <div class = "userinfo-container">
+                    <div class = "usericon" >
+                        <app-user-svgcomponent [svgdetails]="svgdetails"/>
+                    </div>
+                <!-- Display user name here -->
+                <p>{{ userName }}</p>
+                </div>
+            </div>
+        
+        
+            <a [ngClass]="{'active': currentTab === 'home'}" (click)="setActiveTab('home')" >Home</a>
+            <a [ngClass]="{'active': currentTab === 'dashboard'}"  (click)="setActiveTab('dashboard')">Dashboard</a>
+            <a [ngClass]="{'active': currentTab === 'profile'}" (click)="setActiveTab('profile')">Contact</a>
+        </div>
+
+        <div class="endcontainer">
+            <p>POWERED BY</p>
+           <img src="../assets/logo-light-white.svg">
+        </div>
+    </div>
+
+  
+    
+    
+</div>

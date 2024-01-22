@@ -1,0 +1,18 @@
+
+<div class="video-container">
+  <p class="title">Untitled project -I</p>
+    <video #video  [src]="source" controls></video>
+    <div *ngIf="duration" class="video-controls">
+      <button class="svgclass"   (click)="play()">
+         <play-svg [svgDetail]="svgDetail"></play-svg>
+      </button> 
+      <slider-range [min]="0" [max]="duration" [valueMin]="0" [valueMax]="duration" [step]="1" (valueMinChange)="setTimeInit($event)" (valueMaxChange)="setTimeLast($event)"></slider-range>
+      <button class="svgclass" (click)="trimVideo()">
+          <cut-svg [svgDetail]="svgDetail2"></cut-svg>
+      </button>
+     
+    </div>
+    <div class="loader" [ngClass]="{'active': enableRecord}">
+      <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+    </div>
+  </div>
