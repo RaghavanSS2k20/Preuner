@@ -1,19 +1,25 @@
 .card-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 16px;
-    justify-content: space-around;
-  }
+  height: 100vh;
+  width: 100vw;
+   display: flex;
+   flex-direction: row;
+margin: 2%;
+justify-content: center;
+align-items: center;
+    }
   @media (max-width: 600px) {
     .card-container {
-      grid-template-columns: 1fr;
+     
     }
   }  
   .empty{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     font-weight: 700;
+    width: 50%;
+    font-size: 5rem;
     color: #1A3084;
     
 }

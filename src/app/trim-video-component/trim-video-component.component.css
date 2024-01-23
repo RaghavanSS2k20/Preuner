@@ -85,8 +85,8 @@ border:3px solid #8432E2;
       opacity: 1;
       pointer-events: all;
   }
-
-  .lds-ellipsis {
+}
+  /* .lds-ellipsis {
       display: inline-block;
       position: relative;
       width: 64px;
@@ -142,4 +142,4 @@ border:3px solid #8432E2;
       }
     }
     
-}
+} */

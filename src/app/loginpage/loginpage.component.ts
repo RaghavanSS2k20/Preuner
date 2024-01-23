@@ -17,7 +17,9 @@ export class LoginpageComponent implements OnInit {
   ){}
   ngOnInit(): void {
     console.log("hii")
-    this.authService.login("Raghavan@1234",  "Pass1234!")
+    // "Raghavan@1234",  "Pass1234!", ADIMIN
+    // dabudabu  Pass1234! user
+    this.authService.login("dabudabu",  "Pass1234!")
       
   }
 

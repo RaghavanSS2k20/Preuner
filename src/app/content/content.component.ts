@@ -14,7 +14,7 @@ import { OverlayComponent } from '../overlay/overlay.component';
 export class ContentComponent {
   isEmpty:Boolean = true
   cards: CardDetails[] = [
-    { title: 'Card 1', content: 'This is the content of Card 1.', videoUrl: 'https://samplelib.com/lib/preview/mp4/sample-5s.mp4' },
+    { title: 'untitiled - 1', content: 'This is the content of Card 1.', videoUrl: '../assets/v5.mp4' },
     { title: 'Card 2', content: 'This is the content of Card 2.', videoUrl: 'https://v3.cdnpk.net/videvo_files/video/free/2012-09/large_preview/hd0628.mp4' },
     { title: 'Card 3', content: 'This is the content of Card 3.', videoUrl: 'https://v3.cdnpk.net/videvo_files/video/free/2012-09/large_preview/hd0628.mp4' },
     { title: 'Card 3', content: 'This is the content of Card 3.', videoUrl: 'https://v3.cdnpk.net/videvo_files/video/free/2012-09/large_preview/hd0628.mp4' },

@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, Observable , of} from 'rxjs';
 import { map } from 'rxjs';
 import { catchError } from 'rxjs';
+import { throwError } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -25,7 +26,17 @@ export class AuthService {
     const headers = { 'content-type': 'application/json' };
     const body = JSON.stringify({ username, password });
 
-    this.http.post("http://127.0.0.1:8000/login", body, { headers }).subscribe((data: any) => {
+    this.http.post("http://127.0.0.1:8000/login", body, { headers })
+    .pipe(
+      catchError(error => {
+        if (error.status === 401) {
+          // Clear token from local storage if the request is unauthorized (401)
+          localStorage.removeItem('token');
+        }
+        return throwError(error);
+      })
+    )
+    .subscribe((data: any) => {
       this.userRoles = data.user.role ? [data.user.role] : [];
       this.user = data.user;
       console.log(this.user);
@@ -36,6 +47,7 @@ export class AuthService {
 
   logout(): void {
     // Implement logout logic and clear userRoles
+    localStorage.removeItem('token');
     this.userRoles = [];
   }
 
@@ -53,7 +65,7 @@ export class AuthService {
       map(data => {
       
         if ( data.role === role) {
-         
+         console.log(":hoosoos")
           return true;
         } else {
           
